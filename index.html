@@ -946,8 +946,8 @@
         <p style="margin-top: 0; font-weight: normal; font-size: 14px;">Kantor Pos Ende 86300</p>
         
         <div class="signature-container-img">
-            <img src="CAP POSIND.png" class="signature-cap" alt="Cap Pos">
-            <img src="TTD.png" class="signature-ttd" alt="Tanda Tangan">
+            <img src="cap.png" class="signature-cap" alt="Cap Pos">
+            <img src="ttd.png" class="signature-ttd" alt="Tanda Tangan">
         </div>
         
         <span class="signature-name" style="font-size: 14px;">EDISON LEONARD</span><br>
@@ -1429,7 +1429,8 @@ function kirimWhatsApp() {
         const desc = dataInvoice["deskripsi" + i] || dataInvoice["deskripsi_" + i] || "";
         const qty = dataInvoice["qty" + i] || dataInvoice["qty_" + i] || "";
         if (desc !== "") {
-            deskripsiKiriman += `   - ${desc} sebanyak ${qty} Item\n`;
+            deskripsiKiriman += `   - ${desc} sebanyak ${qty} Item
+`;
             itemFound = true;
         }
     }
@@ -1437,9 +1438,11 @@ function kirimWhatsApp() {
     if (!itemFound) {
         const jenisBarang = document.getElementById("jenis_barang").value.trim();
         if (jenisBarang) {
-            deskripsiKiriman += `   - ${jenisBarang}\n`;
+            deskripsiKiriman += `   - ${jenisBarang}
+`;
         } else {
-            deskripsiKiriman += `   - (Tidak ada rincian barang)\n`;
+            deskripsiKiriman += `   - (Tidak ada rincian barang)
+`;
         }
     }
 
