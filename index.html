@@ -17,7 +17,7 @@
             margin: 0;
         }
 
-        /* STYLE TAMPILAN LOGIN & REGISTER */
+        /* STYLE TAMPILAN LOGIN - TEMA BIRU POSIND */
         #loginOverlay {
             position: fixed;
             top: 0;
@@ -52,8 +52,10 @@
         }
         .login-card h3 {
             margin: 0 0 20px 0;
-            color: #ff6600; 
+            color: #004B87; /* Biru PosIND */
             font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         .login-group {
             margin-bottom: 15px;
@@ -64,6 +66,7 @@
             font-size: 13px;
             font-weight: bold;
             margin-bottom: 5px;
+            color: #333;
         }
         .login-group input {
             width: 100%;
@@ -74,12 +77,12 @@
             outline: none;
         }
         .login-group input:focus {
-            border-color: #1d4ed8;
+            border-color: #004B87;
         }
         .btn-login {
             width: 100%;
             padding: 11px;
-            background: #1d4ed8;
+            background: #004B87; /* Biru PosIND */
             color: #fff;
             border: none;
             border-radius: 5px;
@@ -87,34 +90,18 @@
             font-weight: bold;
             cursor: pointer;
             transition: background 0.2s;
-            margin-bottom: 15px;
+            margin-top: 10px;
+            margin-bottom: 5px;
         }
         .btn-login:hover {
-            background: #163ea7;
-        }
-        .btn-register-toggle {
-            background: none;
-            border: none;
-            color: #ff6600;
-            font-size: 13px;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: underline;
-        }
-        .btn-register-toggle:hover {
-            color: #cc5200;
+            background: #003366;
         }
         .error-msg {
-            color: red;
+            color: #d32f2f;
             font-size: 13px;
             margin-top: 10px;
             display: none;
-        }
-        .success-msg {
-            color: green;
-            font-size: 13px;
-            margin-top: 10px;
-            display: none;
+            font-weight: bold;
         }
 
         /* STYLE TOAST NOTIFICATION */
@@ -156,6 +143,19 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
 
+        /* BADGE ROLE USER */
+        .role-badge {
+            background: #e2e8f0;
+            color: #4a5568;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 10px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
         .search-box {
             display: flex;
             flex-wrap: wrap;
@@ -172,7 +172,7 @@
             border-radius: 5px;
         }
         button.icon-btn {
-            background: #1d4ed8;
+            background: #004B87;
             color: #fff;
             border: none;
             height: 40px;
@@ -186,7 +186,7 @@
             transition: background 0.2s;
         }
         button.icon-btn:hover {
-            background: #163ea7;
+            background: #003366;
         }
         .btn-wa-icon {
             background: #25d366 !important;
@@ -195,10 +195,10 @@
             background: #1ebd58 !important;
         }
         .btn-refresh-icon {
-            background: #ff6600 !important;
+            background: #718096 !important; /* Warna Abu Muted */
         }
         .btn-refresh-icon:hover {
-            background: #cc5200 !important;
+            background: #4a5568 !important;
         }
         .btn-logout-icon {
             background: #d32f2f !important;
@@ -232,7 +232,7 @@
         }
         .dropdown-content a:hover {
             background-color: #f1f1f1;
-            color: #1d4ed8;
+            color: #004B87;
         }
         .dropdown:hover .dropdown-content {
             display: block;
@@ -259,7 +259,7 @@
         }
         .logo-text h2 {
             margin: 0 0 5px 0;
-            color: #000;
+            color: #004B87;
             font-size: 20px;
         }
         .logo-text strong {
@@ -271,7 +271,6 @@
             color: #444;
         }
         
-        /* FLEKSIBEL DAN TEPAT DI BAGIAN KANAN */
         .invoice-title {
             text-align: right;
             flex: 1.5;
@@ -282,7 +281,7 @@
         .invoice-title h1 {
             margin: 0 0 10px 0;
             font-size: 40px;
-            color: #1d4ed8;
+            color: #004B87;
         }
         .invoice-info-table {
             border-collapse: collapse;
@@ -331,7 +330,7 @@
         .box h3 {
             margin-top: 0;
             margin-bottom: 15px;
-            color: #1d4ed8;
+            color: #004B87;
         }
         .form-table {
             width: 100%;
@@ -376,11 +375,11 @@
             margin-top: 10px;
         }
         table.items-table th {
-            background: #1d4ed8 !important; 
+            background: #004B87 !important; 
             color: #ffffff !important;
             padding: 12px 8px;
             font-size: 13px;
-            border: 1px solid #1d4ed8;
+            border: 1px solid #004B87;
             font-weight: bold;
             -webkit-print-color-adjust: exact !important;
             print-color-adjust: exact !important;
@@ -504,7 +503,6 @@
             opacity: 0.95;
         }
         
-
         .signature-name {
             font-weight: bold;
             text-decoration: underline;
@@ -647,39 +645,17 @@
          
         <div id="loginFormSection">
             <div class="login-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" placeholder="Masukkan Username" autocomplete="off">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Masukkan Username" inputmode="numeric" pattern="[0-9]*" autocomplete="off">
             </div>
             <div class="login-group">
                 <label for="password">Password</label>
                 <input type="password" id="password" placeholder="Masukkan Password" onkeypress="checkEnter(event)">
             </div>
             <button class="btn-login" onclick="prosesLogin()">Masuk Aplikasi</button>
-            <br>
-            <button class="btn-register-toggle" onclick="toggleForm('register')">Belum punya akun? Daftar Baru</button>
         </div>
 
-        <div id="registerFormSection" style="display: none;">
-            <div class="login-group">
-                <label for="regUsername">Username Baru</label>
-                <input type="text" id="regUsername" placeholder="Buat Username" autocomplete="off">
-            </div>
-            <div class="login-group">
-                <label for="regPassword">Password Baru</label>
-                <input type="password" id="regPassword" placeholder="Buat Password">
-            </div>
-            <div class="login-group">
-                <label for="regPasswordConfirm">Konfirmasi Password</label>
-                <input type="password" id="regPasswordConfirm" placeholder="Ulangi Password">
-            </div>
-            <button class="btn-login" style="background: #ff6600;" onclick="prosesRegister()">Daftar Akun</button>
-            <br>
-            <button class="btn-register-toggle" style="color: #1d4ed8;" onclick="toggleForm('login')">Sudah punya akun? Login</button>
-        </div>
-
-        <div id="loginError" class="error-msg">Username atau Password salah!</div>
-        <div id="registerError" class="error-msg"></div>
-        <div id="registerSuccess" class="success-msg">Pendaftaran berhasil! Silakan login.</div>
+        <div id="loginError" class="error-msg">User atau Password Anda Salah</div>
     </div>
 </div>
 
@@ -688,7 +664,7 @@
         <input type="text" id="searchInvoice" placeholder="INV-POS-ENDE-2026-">
         <button onclick="getInvoice()" class="icon-btn" title="Cari Invoice"><i class="fa-solid fa-magnifying-glass"></i></button>
          
-        <div class="dropdown">
+        <div class="dropdown" id="printMenuDropdown">
             <button class="icon-btn" title="Cetak Option"><i class="fa-solid fa-print"></i></button>
             <div class="dropdown-content">
                 <a href="#" onclick="cetakInvoicePDF(); return false;"><i class="fa-solid fa-file-invoice"></i> Cetak Invoice</a>
@@ -696,10 +672,14 @@
             </div>
         </div>
          
-        <button onclick="kirimWhatsApp()" class="icon-btn btn-wa-icon" title="Kirim ke WA"><i class="fa-brands fa-whatsapp"></i></button>
-        <button onclick="openDatabase()" class="icon-btn" title="Database Invoice"><i class="fa-solid fa-folder-open"></i></button>
-        <button onclick="refreshPageData()" class="icon-btn btn-refresh-icon" title="Kosongkan Data / Refresh"><i class="fa-solid fa-rotate"></i></button>
-        <button onclick="prosesLogout()" class="icon-btn btn-logout-icon" title="Keluar Aplikasi" style="margin-left: auto;"><i class="fa-solid fa-right-from-bracket"></i></button>
+        <button id="btnWhatsApp" onclick="kirimWhatsApp()" class="icon-btn btn-wa-icon" title="Kirim ke WA"><i class="fa-brands fa-whatsapp"></i></button>
+        <button id="btnDatabase" onclick="openDatabase()" class="icon-btn" title="Database Invoice"><i class="fa-solid fa-folder-open"></i></button>
+        <button id="btnRefresh" onclick="refreshPageData()" class="icon-btn btn-refresh-icon" title="Kosongkan Data / Refresh"><i class="fa-solid fa-rotate"></i></button>
+        
+        <div style="margin-left: auto; display: flex; align-items: center; gap: 10px;">
+            <span style="font-size: 13px; font-weight: bold; color: #333;">User: <span id="displayUser">-</span> <span id="displayRole" class="role-badge">-</span></span>
+            <button onclick="prosesLogout()" class="icon-btn btn-logout-icon" title="Keluar Aplikasi"><i class="fa-solid fa-right-from-bracket"></i></button>
+        </div>
     </div>
 
     <div class="header">
@@ -1069,14 +1049,12 @@
 </div>
 
 <script>
-const MASTER_USER = "adminpos";     
-const MASTER_PASS = "ende86300";   
-const scriptURL = "https://script.google.com/macros/s/AKfycby2h-8VUk8NMsRiFiZsnIt1EAoy3iTwD7qx3Aw0q2pCoS7E2X39FiJj9XhK-KB1iOal/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbzYGQ7w_i3LYOwABbyZ-2X2m-0GXp0zHNevGxNDQAvRKmvNijxQwmxDkVLbGoRqK6y7/exec";
 let dataInvoice = {};
 
 window.onload = function() {
     if (sessionStorage.getItem("isLoggedIn") === "true") {
-        bukaAplikasi();
+        bukaAplikasi(sessionStorage.getItem("username"), sessionStorage.getItem("userRole"));
     }
 }
 
@@ -1090,90 +1068,105 @@ function showToast(pesan, tipe = "success") {
     setTimeout(() => { toast.classList.remove("show"); }, 3000);
 }
 
-function toggleForm(type) {
-    document.getElementById("loginError").style.display = "none";
-    document.getElementById("registerError").style.display = "none";
-    document.getElementById("registerSuccess").style.display = "none";
-
-    if (type === 'register') {
-        document.getElementById("loginFormSection").style.display = "none";
-        document.getElementById("registerFormSection").style.display = "block";
-        document.getElementById("formTitle").innerText = "PENDAFTARAN USER BARU";
-    } else {
-        document.getElementById("loginFormSection").style.display = "block";
-        document.getElementById("registerFormSection").style.display = "none";
-        document.getElementById("formTitle").innerText = "SISTEM INVOICE & SURAT JALAN";
-    }
-}
-
-function prosesLogin() {
+// FUNGSI VERIFIKASI LOGIN INTEGRASI GOOGLE SHEET (Master & Data User)
+// FUNGSI VERIFIKASI LOGIN INTEGRASI GOOGLE SHEET (Sudah Diperbaiki & Dirapikan)
+async function prosesLogin() {
     const userIn = document.getElementById("username").value.trim();
     const passIn = document.getElementById("password").value;
     const errorMsg = document.getElementById("loginError");
-    let registeredUsers = JSON.parse(localStorage.getItem("userDatabase")) || {};
-
-    if ((userIn === MASTER_USER && passIn === MASTER_PASS) || (registeredUsers[userIn] && registeredUsers[userIn] === passIn)) {
-        sessionStorage.setItem("isLoggedIn", "true");
-        errorMsg.style.display = "none";
-        bukaAplikasi();
-    } else {
-        errorMsg.style.display = "block";
-    }
-}
-
-function prosesRegister() {
-    const regUser = document.getElementById("regUsername").value.trim();
-    const regPass = document.getElementById("regPassword").value;
-    const regPassConfirm = document.getElementById("regPasswordConfirm").value;
-    const regError = document.getElementById("registerError");
-    const regSuccess = document.getElementById("registerSuccess");
-
-    regError.style.display = "none";
-    regSuccess.style.display = "none";
-
-    if (regUser === "" || regPass === "") {
-        regError.innerText = "Username dan Password tidak boleh kosong!";
-        regError.style.display = "block";
-        return;
-    }
-    if (regPass !== regPassConfirm) {
-        regError.innerText = "Konfirmasi password tidak cocok!";
-        regError.style.display = "block";
-        return;
-    }
-
-    let registeredUsers = JSON.parse(localStorage.getItem("userDatabase")) || {};
-    if (regUser === MASTER_USER || registeredUsers[regUser]) {
-        regError.innerText = "Username sudah terdaftar! Gunakan nama lain.";
-        regError.style.display = "block";
-        return;
-    }
-
-    registeredUsers[regUser] = regPass;
-    localStorage.setItem("userDatabase", JSON.stringify(registeredUsers));
-
-    document.getElementById("regUsername").value = "";
-    document.getElementById("regPassword").value = "";
-    document.getElementById("regPasswordConfirm").value = "";
-    regSuccess.style.display = "block";
     
-    setTimeout(() => { toggleForm('login'); }, 1500);
+    errorMsg.innerText = "User atau Password Anda Salah";
+    errorMsg.style.display = "none";
+
+    if (userIn === "" || passIn === "") {
+        errorMsg.innerText = "Username dan Password tidak boleh kosong!";
+        errorMsg.style.display = "block";
+        return;
+    }
+
+    try {
+        // Melakukan request validasi login ke Google Apps Script Online
+        const response = await fetch(scriptURL + "?action=checkLogin&username=" + encodeURIComponent(userIn) + "&password=" + encodeURIComponent(passIn));
+        
+        if (response.ok) {
+            const out = await response.json();
+            
+            if (out.status === "success" || out.valid === true) {
+                // Ambil data nama dan role dari spreadsheet, berikan default jika kosong
+                const finalUsername = out.nama || userIn;
+                const finalRole = out.role || "User";
+
+                sessionStorage.setItem("isLoggedIn", "true");
+                sessionStorage.setItem("username", finalUsername);
+                sessionStorage.setItem("userRole", finalRole);
+                
+                bukaAplikasi(finalUsername, finalRole);
+                showToast("Login Berhasil! Selamat Datang " + finalUsername);
+                return;
+            } else {
+                errorMsg.innerText = out.message || "Username atau Password salah!";
+                errorMsg.style.display = "block";
+                return;
+            }
+        }
+        errorMsg.style.display = "block";
+    } catch (error) {
+        console.error("Gagal koneksi database online, mencoba fallback offline:", error);
+        
+        // Fallback Akun Lokal Darurat jika sinyal/jaringan internet sedang gangguan
+        if (userIn === "adminpos" && passIn === "ende86300") {
+            sessionStorage.setItem("isLoggedIn", "true");
+            sessionStorage.setItem("username", "adminpos");
+            sessionStorage.setItem("userRole", "Admin");
+            bukaAplikasi("adminpos", "Admin");
+            showToast("Login Mode Darurat Berhasil!");
+        } else {
+            errorMsg.innerText = "Gagal terhubung ke server validasi jaringan!";
+            errorMsg.style.display = "block";
+        }
+    }
 }
 
 function prosesLogout() {
     if (confirm("Apakah Anda yakin ingin keluar dari aplikasi?")) {
-        sessionStorage.removeItem("isLoggedIn");
+        sessionStorage.clear();
         document.getElementById("username").value = "";
         document.getElementById("password").value = "";
         document.getElementById("mainContent").style.display = "none";
         document.getElementById("loginOverlay").style.display = "flex";
-        toggleForm('login');
     }
 }
 
-function bukaAplikasi() {
+// BUKA APLIKASI DENGAN VALIDASI HAK AKSES BERDASARKAN ROLE
+function bukaAplikasi(username, role) {
     document.getElementById("loginOverlay").style.display = "none";
     document.getElementById("mainContent").style.display = "block";
+    
+    document.getElementById("displayUser").innerText = username;
+    document.getElementById("displayRole").innerText = role;
+
+    // ATUR HAK AKSES BERDASARKAN ROLE USER
+    const roleUpper = role.toUpperCase();
+    if(roleUpper === "DRIVER" || roleUpper === "KURIR") {
+        // Driver hanya diizinkan mencari & mencetak Surat Jalan, menyembunyikan akses sensitif finansial
+        document.getElementById("btnDatabase").style.display = "none";
+        document.getElementById("btnWhatsApp").style.display = "none";
+        document.getElementById("ppnPersen").disabled = true;
+        document.getElementById("pphPersen").disabled = true;
+        showToast("Masuk sebagai Driver. Akses terbatas.");
+    } else if (roleUpper === "STAF" || roleUpper === "OPERATOR") {
+        // Staf/Operator tidak boleh buka link database spreadsheet utama secara langsung
+        document.getElementById("btnDatabase").style.display = "none";
+        document.getElementById("btnWhatsApp").style.display = "inline-flex";
+        document.getElementById("ppnPersen").disabled = false;
+        document.getElementById("pphPersen").disabled = false;
+    } else {
+        // Admin / Superuser mempunyai kontrol penuh ke semua modul sistem
+        document.getElementById("btnDatabase").style.display = "inline-flex";
+        document.getElementById("btnWhatsApp").style.display = "inline-flex";
+        document.getElementById("ppnPersen").disabled = false;
+        document.getElementById("pphPersen").disabled = false;
+    }
 }
 
 function checkEnter(event) {
@@ -1419,7 +1412,6 @@ function kirimWhatsApp() {
         return;
     }
 
-    // Mengambil data dinamis dari form input di layar
     const tanggal = document.getElementById("tanggal").value.trim() || "-";
     const namaPelanggan = document.getElementById("nama_pengirim").value.trim() || document.getElementById("nama_pengirim_info").value.trim() || "-";
     const totalTagihan = document.getElementById("total").innerText.trim();
@@ -1431,36 +1423,29 @@ function kirimWhatsApp() {
         if (!noHp) return;
     }
 
-    // Cari rincian deskripsi kiriman (Iterasi item 1 s/d 5)
     let deskripsiKiriman = "";
     let itemFound = false;
     for (let i = 1; i <= 5; i++) {
         const desc = dataInvoice["deskripsi" + i] || dataInvoice["deskripsi_" + i] || "";
         const qty = dataInvoice["qty" + i] || dataInvoice["qty_" + i] || "";
         if (desc !== "") {
-            deskripsiKiriman += `   - ${desc} sebanyak ${qty} Item
-`;
+            deskripsiKiriman += `   - ${desc} sebanyak ${qty} Item\n`;
             itemFound = true;
         }
     }
     
-    // Fallback jika tidak memakai data pencarian master invoice
     if (!itemFound) {
         const jenisBarang = document.getElementById("jenis_barang").value.trim();
         if (jenisBarang) {
-            deskripsiKiriman += `   - ${jenisBarang}
-`;
+            deskripsiKiriman += `   - ${jenisBarang}\n`;
         } else {
-            deskripsiKiriman += `   - (Tidak ada rincian barang)
-`;
+            deskripsiKiriman += `   - (Tidak ada rincian barang)\n`;
         }
     }
 
-    // Format nomor HP ke standar internasional WhatsApp (62)
     noHp = noHp.replace(/[^0-9]/g, '');
     if (noHp.startsWith('0')) noHp = '62' + noHp.slice(1);
 
-    // Menyusun template teks pesan WhatsApp secara presisi
     const textMessage = 
 `Halo, 
 kami dari *PT. POS INDONESIA (Persero)* *Kantor Pos Ende 86300*
