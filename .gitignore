@@ -1,0 +1,12 @@
+# Backup & versi lama
+*.js
+INV_SJ_*.html
+index-v*.html
+index-fixed.html
+index-invoice-fix-v2.html
+Kode*.gs
+1/
+
+# Duplikat PNG (pakai cap.img & ttd.ttd)
+cap.png
+ttd.png
